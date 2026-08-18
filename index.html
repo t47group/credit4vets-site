@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Credit4Vets — Empowering Veterans for Financial Freedom</title>
+<meta name="description" content="Credit4Vets is a veteran-founded nonprofit helping veterans achieve financial security through business counseling, housing assistance, credit & financing support, and mental health resources." />
+<style>
+  :root{
+    --bg:#ffffff; --bg2:#f5f7fb; --ink:#131826; --muted:#586074; --faint:#8a92a5;
+    --line:#e5e9f0; --card:#ffffff;
+    --navy:#0f2647; --navy2:#183761; --blue:#1f5fbf; --red:#b3202e; --red2:#d63b48; --gold:#c99a3a; --green:#1a9e5f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.2px;font-size:17px}
+  .logo{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:13px;color:#fff;
+    background:linear-gradient(135deg,var(--navy),var(--blue));box-shadow:0 6px 18px rgba(15,38,71,.3);position:relative}
+  .logo::after{content:"★";position:absolute;font-size:9px;color:var(--gold);bottom:4px}
+  .brand small{display:block;color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.7px;text-transform:uppercase;margin-top:1px}
+  nav .links{display:flex;gap:26px;align-items:center}
+  nav .links a{color:var(--muted);font-size:14.5px;font-weight:600;transition:color .15s}
+  nav .links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:11px;font-weight:700;font-size:14px;
+    background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;transition:transform .15s,box-shadow .15s;border:none;cursor:pointer}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(31,95,191,.32)}
+  .btn.red{background:linear-gradient(135deg,var(--red),var(--red2))}
+  .btn.red:hover{box-shadow:0 12px 30px rgba(179,32,46,.32)}
+  .btn.light{background:#fff;color:var(--navy)}
+  @media(max-width:680px){nav .links a:not(.btn){display:none}}
+
+  .hero{background:
+      radial-gradient(760px 420px at 82% -10%, rgba(31,95,191,.4), transparent 60%),
+      radial-gradient(680px 440px at 0% 120%, rgba(179,32,46,.18), transparent 60%),
+      var(--navy);
+    color:#fff;padding:96px 0 84px;text-align:center}
+  .stars{letter-spacing:8px;color:var(--gold);font-size:14px;margin-bottom:18px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:#cfe0ff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 16px;background:rgba(255,255,255,.06);margin-bottom:24px}
+  .hero h1{font-size:clamp(32px,5.6vw,56px);line-height:1.07;font-weight:850;letter-spacing:-1px;max-width:18ch;margin:0 auto 22px}
+  .hero h1 .u{color:#ffd36b}
+  .hero p{font-size:clamp(16px,2.2vw,19px);color:#c3cde0;max-width:60ch;margin:0 auto 34px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  section{padding:72px 0}
+  .sec-head{text-align:center;margin-bottom:44px}
+  .sec-head .k{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);margin-bottom:11px}
+  .sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:850;letter-spacing:-.5px}
+  .sec-head p{color:var(--muted);margin:12px auto 0;max-width:62ch}
+
+  .mission{background:var(--bg2)}
+  .lead{max-width:780px;margin:0 auto;text-align:center;font-size:19px;color:var(--ink)}
+  .lead b{color:var(--blue)}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;box-shadow:0 1px 2px rgba(15,38,71,.03)}
+  .card .ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:24px;margin-bottom:16px;background:rgba(31,95,191,.08)}
+  .card h3{font-size:19px;font-weight:800;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  .board{background:var(--bg2)}
+  .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .person{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;text-align:center}
+  .avatar{width:76px;height:76px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-weight:800;font-size:24px;color:#fff;
+    background:linear-gradient(135deg,var(--navy),var(--blue))}
+  .person h3{font-size:18px;font-weight:800;margin-bottom:4px}
+  .person .role{color:var(--red);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+  .person p{color:var(--muted);font-size:14px}
+
+  .card .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 9px;border-radius:20px;margin-bottom:14px}
+  .tag.refer{background:rgba(31,95,191,.12);color:var(--blue)}
+  .tag.give{background:rgba(26,158,95,.12);color:var(--green)}
+  .tag.news{background:rgba(201,154,58,.16);color:#9a7418}
+  .card .link{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--blue);margin-top:14px}
+
+  .cta-band{background:
+      radial-gradient(700px 360px at 80% -20%, rgba(31,95,191,.35), transparent 60%),
+      var(--navy);color:#fff;text-align:center}
+  .cta-band h2{font-size:clamp(26px,4vw,36px);font-weight:850;letter-spacing:-.5px;margin-bottom:14px}
+  .cta-band p{color:#c3cde0;max-width:56ch;margin:0 auto 10px}
+  .cta-band .tax{font-size:13.5px;color:#93a0b8;margin-bottom:26px}
+
+  .contact{text-align:center}
+  .cinfo{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:24px 0 18px;color:var(--muted);font-size:14.5px}
+  .cinfo a{color:var(--ink);font-weight:600}
+  .socials{display:flex;gap:14px;justify-content:center;margin-top:8px}
+  .socials a{width:42px;height:42px;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;font-weight:700;color:var(--muted);transition:.15s}
+  .socials a:hover{color:var(--blue);border-color:var(--blue)}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;margin-top:10px}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--faint);font-size:13.5px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo">C4V</div>
+      <div>Credit4Vets <small>Veteran Nonprofit</small></div>
+    </div>
+    <nav class="links">
+      <a href="#mission">Mission</a>
+      <a href="#services">What We Do</a>
+      <a href="#board">Our Board</a>
+      <a class="btn" href="#involved">Get Involved</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <span class="eyebrow">Veteran-Founded Nonprofit · Tempe, AZ</span>
+      <h1>Empowering veterans for <span class="u">financial freedom.</span></h1>
+      <p>Credit4Vets helps those who served build and maintain a strong future — through business counseling, housing assistance, credit and financing support, and mental health resources.</p>
+      <div class="cta-row">
+        <a class="btn red" href="#involved">Refer a Vet</a>
+        <a class="btn light" href="#services">How we help</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission" class="mission">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="k">Our Mission</div>
+        <h2>Your partner in financial success.</h2>
+      </div>
+      <p class="lead">We're dedicated to empowering veterans on their journey toward <b>financial security and independence</b> — helping those who served overcome financial obstacles and achieve their dreams, one veteran at a time.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="k">What We Do</div>
+        <h2>Comprehensive support for those who served.</h2>
+        <p>Practical, tailored help across the areas that matter most to a veteran's financial wellbeing.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ic">💼</div>
+          <h3>Business Counseling</h3>
+          <p>Our experienced counselors help veterans craft business plans, develop marketing strategies, and navigate the complex landscape of business financing — turning aspirations into successful businesses.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🏠</div>
+          <h3>Housing Assistance</h3>
+          <p>We help veterans find suitable housing — from apartments and homes to temporary shelters — providing the residential stability to concentrate on financial wellness.</p>
+        </div>
+        <div class="card">
+          <div class="ic">📊</div>
+          <h3>Credit &amp; Financing</h3>
+          <p>We connect veterans with the loans and lines of credit they need to grow their businesses, and guide them toward government and private programs built for veterans.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🤍</div>
+          <h3>Mental Health Support</h3>
+          <p>The transition to civilian life brings real challenges. Through partnerships with mental health professionals, we offer counseling, coping strategies, and a support network built around veterans' experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="board" class="board">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="k">Our Board</div>
+        <h2>Led by veterans, for veterans.</h2>
+        <p>Thought leaders bringing a unique set of skills and expertise to the mission.</p>
+      </div>
+      <div class="people">
+        <div class="person">
+          <div class="avatar">AR</div>
+          <h3>Anthony Romero</h3>
+          <div class="role">Co-Founder &amp; CEO</div>
+          <p>A disabled veteran and the first recipient of Credit4Vets — living proof of the mission he now leads.</p>
+        </div>
+        <div class="person">
+          <div class="avatar">DS</div>
+          <h3>Damien Stone</h3>
+          <div class="role">Board Member</div>
+          <p>United States Air Force, with a background in small business and tax finance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="involved">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="k">Get Involved</div>
+        <h2>Join us in serving those who served.</h2>
+        <p>Your support makes a lasting impact on veterans building a brighter financial future.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="tag refer">Refer a Vet</span>
+          <h3>Know a veteran in need?</h3>
+          <p>Are you a veteran, or do you know one who needs credit repair or financial support? Reach out and we'll connect them with help.</p>
+          <a class="link" href="mailto:anthony@credit4vets.org?subject=Refer%20a%20Vet">Refer a veteran →</a>
+        </div>
+        <div class="card">
+          <span class="tag give">Support</span>
+          <h3>Support the mission</h3>
+          <p>All cash donations are eligible for a full tax exemption. Online giving is being set up — reach out and we'll share the best way to give today.</p>
+          <a class="link" href="mailto:anthony@credit4vets.org?subject=I%20want%20to%20support%20Credit4Vets">Contact us to give →</a>
+        </div>
+        <div class="card">
+          <span class="tag news">Stay Informed</span>
+          <h3>Join our mailing list</h3>
+          <p>Get updates about upcoming events, specialty drives, new initiatives, and more from Credit4Vets.</p>
+          <a class="link" href="mailto:anthony@credit4vets.org?subject=Add%20me%20to%20the%20Credit4Vets%20mailing%20list">Sign up →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-band">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:8px">
+        <div class="k" style="color:#8fb4ff">Contact</div>
+        <h2 style="color:#fff">Reach the Credit4Vets team.</h2>
+      </div>
+      <p>Questions, referrals, or ways to help — we'd love to hear from you.</p>
+      <div style="margin-top:24px">
+        <a class="btn light" href="mailto:anthony@credit4vets.org">anthony@credit4vets.org</a>
+      </div>
+      <div class="cinfo" style="color:#c3cde0;margin-top:26px">
+        <span>✆ <a href="tel:+16024993032" style="color:#fff">602-499-3032</a></span>
+        <span>⌖ 210 E La Jolla Dr, Tempe, AZ 85282</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Credit4Vets · Tempe, AZ · Serving those who served.</div>
+    <div><a href="#involved">Get Involved</a></div>
+  </div>
+</footer>
+</body>
+</html>
